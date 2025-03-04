@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popup Message Card</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="popup-container" id="popupContainer">
+    <div class="popup-container" id="popupContainer" role="dialog" aria-labelledby="popupTitle" aria-describedby="popupDesc">
         <div class="popup-content">
-            <span class="close" id="closePopup">&times;</span>
-            <h2>Welcome to Our Website!</h2>
-            <p>Thank you for visiting. We have a special offer for you!</p>
+            <span class="close" id="closePopup" role="button" aria-label="Close Popup">&times;</span>
+            <h2 id="popupTitle">Welcome to Our Website!</h2>
+            <p id="popupDesc">Thank you for visiting. We have a special offer for you!</p>
             <button>Claim Offer</button>
         </div>
     </div>
