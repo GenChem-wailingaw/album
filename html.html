@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editable Photo Album</title>
+    <title>Popup Message Card</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="album">
-        <h1>My Photo Album</h1>
-        <div class="album-container">
-            <!-- Photos will be dynamically added here -->
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Welcome to Our Website!</h2>
+            <p>Thank you for visiting. We have a special offer for you!</p>
+            <button>Claim Offer</button>
         </div>
-        <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
-        <button id="add-photo-btn">Add Photos</button>
     </div>
-
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
