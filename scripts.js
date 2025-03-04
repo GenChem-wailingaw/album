@@ -1,21 +1,21 @@
-document.getElementById('add-photo-btn').addEventListener('click', function() {
-    document.getElementById('file-input').click();
-});
+document.addEventListener('DOMContentLoaded', function() {
+    var popupContainer = document.getElementById('popupContainer');
+    var closePopup = document.getElementById('closePopup');
 
-document.getElementById('file-input').addEventListener('change', function(event) {
-    const files = event.target.files;
-    const albumContainer = document.querySelector('.album-container');
+    // Show the popup after 2 seconds
+    setTimeout(function() {
+        popupContainer.style.display = 'block';
+    }, 2000);
 
-    for (let i = 0; i < files.length; i++) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            albumContainer.appendChild(img);
-        };
-        reader.readAsDataURL(files[i]);
-    }
+    // Close the popup when the user clicks on the close button
+    closePopup.addEventListener('click', function() {
+        popupContainer.style.display = 'none';
+    });
 
-    // Clear the input value to allow selecting the same images again
-    event.target.value = '';
+    // Close the popup when the user clicks anywhere outside the popup content
+    window.addEventListener('click', function(event) {
+        if (event.target == popupContainer) {
+            popupContainer.style.display = 'none';
+        }
+    });
 });
